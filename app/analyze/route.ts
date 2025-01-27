@@ -37,7 +37,7 @@ export const { POST } = serve<EmailPayload>(async (context) => {
                 }),
                 execute: async ({ attachmentUrl }) => {
                     if (!attachmentUrl || attachment_type !== 'application/pdf') {
-                        return { content: 'NO_ATTACHMENT' };
+                        return "NO_ATTACHMENT";
                     }
 
                     const response = await fetch(attachmentUrl);
@@ -92,7 +92,8 @@ export const { POST } = serve<EmailPayload>(async (context) => {
         const { text } = await context.agents.task({
             agent: pdfAgent,
             prompt: `Process this PDF attachment using the processPDF tool.
-                    If the attachment doesn't exist or is not a PDF, return 'NO_ATTACHMENT'.
+                    If the attachment doesn't exist or is not a PDF, tool returns NO_ATTACHMENT string.
+                    If there is no attachment, don't retry processing the PDF.
                     Attachment URL: ${attachment}
                     
                     Extract and summarize the key information from this PDF.
