@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@upstash/workflow':
-        specifier: ^0.2.6-canary.0
-        version: 0.2.6-canary.0(react@19.0.0)
+        specifier: ^0.2.6
+        version: 0.2.6(react@19.0.0)
       ai:
         specifier: ^4.1.7
         version: 4.1.7(react@19.0.0)(zod@3.24.1)
@@ -473,8 +473,8 @@ packages:
   '@upstash/qstash@2.7.20':
     resolution: {integrity: sha512-fdh5df4BuJwSUhXv33g/Eaj7gG+fu3tBoXyGE5hg4zEZX9fwUY/nuc0uDlLWh54L66JfMdESVOjIaiLa1cgL1Q==}
 
-  '@upstash/workflow@0.2.6-canary.0':
-    resolution: {integrity: sha512-0MsAt63+TZ0ZCOPnwQou6CIuNOyqeY8haoFqrGEoNoLNPW5a27sg4EEAu6XkysbGEG5yelC2ouwR8s/LjY4psw==}
+  '@upstash/workflow@0.2.6':
+    resolution: {integrity: sha512-/yRoAnhCwsqdrBhCGLEppG29VDz7ihhSkMjdAu/znAhSLCYcDS2oSIxS0NKKHq+hHqYBw+/bePO5qBQyQwUzvA==}
 
   abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
@@ -2307,7 +2307,7 @@ snapshots:
       jose: 5.9.6
       neverthrow: 7.2.0
 
-  '@upstash/workflow@0.2.6-canary.0(react@19.0.0)':
+  '@upstash/workflow@0.2.6(react@19.0.0)':
     dependencies:
       '@ai-sdk/openai': 1.1.4(zod@3.24.1)
       '@upstash/qstash': 2.7.20

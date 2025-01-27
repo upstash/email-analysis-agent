@@ -17,7 +17,12 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const { POST } = serve<EmailPayload>(async (context) => {
     const { message, subject, to, attachment, attachment_type } = context.requestPayload;
-    const model = context.agents.openai("gpt-4");
+    const model = context.agents.openai("deepseek-chat",
+        {
+            baseURL: "https://api.deepseek.com",
+            apiKey: process.env.DEEPSEEK_API_KEY
+        }
+    );
 
     // PDF processing agent
     const pdfAgent = context.agents.agent({

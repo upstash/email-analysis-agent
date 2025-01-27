@@ -11,7 +11,7 @@ For more detailed setup guide, see the [related blog post](https://upstash.com/b
 This application uses **Resend** to send emails and **DeepSeek** for LLMs. To run the application, you need the following environment variables in the `.env` file.
 
 ```
-OPENAI_API_KEY=
+DEEPSEEK_API_KEY=
 QSTASH_TOKEN=
 RESEND_API_KEY=
 ```
