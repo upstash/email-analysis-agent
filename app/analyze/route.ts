@@ -14,7 +14,6 @@ type EmailPayload = {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-
 export const { POST } = serve<EmailPayload>(async (context) => {
     const { message, subject, to, attachment, attachment_type } = context.requestPayload;
     const model = context.agents.openai("deepseek-chat",
@@ -123,6 +122,4 @@ export const { POST } = serve<EmailPayload>(async (context) => {
                 Make sure to replace YOUR_EMAIL_CONTENT with your actual email text in a single line, using \\n for newlines.
                 The response should be concise but address all key points from both the message and PDF content.`
     }).run();
-}, {
-    baseUrl: "https://1b3e-85-101-27-246.ngrok-free.app"
 });
