@@ -9,14 +9,15 @@ type EmailPayload = {
     subject: string,
     to: string,
     attachment?: string,
+    attachment_type?: string
 }
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 
 export const { POST } = serve<EmailPayload>(async (context) => {
-    const { message, subject, to, attachment } = context.requestPayload;
-    const model = context.agents.openai('gpt-4');
+    const { message, subject, to, attachment, attachment_type } = context.requestPayload;
+    const model = context.agents.openai("gpt-4");
 
     // PDF processing agent
     const pdfAgent = context.agents.agent({
@@ -31,7 +32,7 @@ export const { POST } = serve<EmailPayload>(async (context) => {
                     attachmentUrl: z.string().describe('URL of the PDF attachment')
                 }),
                 execute: async ({ attachmentUrl }) => {
-                    if (!attachmentUrl) {
+                    if (!attachmentUrl || attachment_type !== 'application/pdf') {
                         return { content: '' };
                     }
 

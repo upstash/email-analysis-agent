@@ -4,6 +4,8 @@ This project allows you to automatically analyze email threads and their attachm
 
 ## Setup Instructions
 
+For more detailed setup guide, see the [related blog post](https://upstash.com/blog/email-analysis-agent).
+
 ### 1. Set Environment Variables
 
 This application uses **Resend** to send emails and **DeepSeek** for LLMs. To run the application, you need the following environment variables in the `.env` file.
@@ -55,7 +57,8 @@ You can also use `ngrok` to setup a publicly accessible endpoint on your local. 
     "message": "{{body_plain}}",
     "subject": "{{subject}}",
     "to": "{{to_email}}",
-    "attachment": "{{attachment_1}}"
+    "attachment": "{{attachment_1}}",
+	"attachment_type": "{{attachment_type}}"
   }
   ```
 - **Wrap Request in Array**: No
@@ -69,6 +72,7 @@ You can also use `ngrok` to setup a publicly accessible endpoint on your local. 
 - `subject`: Use Gmail's "Raw Payload Headers Subject" field
 - `to`: Use Gmail's "From Email" field
 - `attachment`: Use Gmail's "Attachment 1 Attachment" field
+- `attachment_type`: The type of the attachment, currently only `application/pdf` is available on backend.
 
 ## Limitations
 
