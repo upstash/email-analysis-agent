@@ -1,4 +1,4 @@
-# Email Analysis Workflow with DeepSeek R1
+# Email Analysis Workflow with DeepSeek V3
 
 This project allows you to automatically analyze email threads and their attachments using AI. When you forward an email to specific email address, Zapier will trigger a webhook that processes the content and sends back an AI generated response suggestion.
 
